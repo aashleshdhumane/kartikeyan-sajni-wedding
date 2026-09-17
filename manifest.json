@@ -1,0 +1,33 @@
+{
+  "name": "The Wedding of Kartikeyan & Sajni",
+  "short_name": "K & S Wedding",
+  "description": "With the blessings of our families, we invite you to celebrate our wedding.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#4e1520",
+  "theme_color": "#4e1520",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle"],
+  "screenshots": [
+    {
+      "src": "assets/images/share-preview.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg"
+    }
+  ]
+}

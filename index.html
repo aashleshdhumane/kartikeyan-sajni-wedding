@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary Meta (overridden dynamically by app.js from config) -->
+  <title>The Wedding of Kartikeyan &amp; Sajni | 14 February 2027</title>
+  <meta name="description"
+        content="With the blessings of our families, we joyfully invite you to celebrate the wedding of Kartikeyan Gupta and Sajni Suvarna." />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="The Wedding of Kartikeyan &amp; Sajni" />
+  <meta property="og:description" content="With the blessings of our families, we invite you to celebrate our wedding." />
+  <meta property="og:image"       content="assets/images/share-preview.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="The Wedding of Kartikeyan &amp; Sajni" />
+  <meta name="twitter:description" content="With the blessings of our families, we invite you to celebrate our wedding." />
+  <meta name="twitter:image"       content="assets/images/share-preview.jpg" />
+
+  <!-- PWA / Theme -->
+  <meta name="theme-color" content="#4e1520" />
+  <meta name="apple-mobile-web-app-capable"          content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title"            content="K &amp; S Wedding" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Favicon (inline SVG data URI — no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>" />
+
+  <!-- Google Fonts: Cormorant Garamond (serif) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCROLL PROGRESS BAR
+  ═══════════════════════════════════════════════════════ -->
+  <div id="scroll-progress" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       LOADING SCREEN
+  ═══════════════════════════════════════════════════════ -->
+  <div id="loading-screen" role="status" aria-live="polite" aria-label="Loading invitation">
+    <div class="loading-ornament" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="28" stroke="rgba(212,175,87,0.4)" stroke-width="1"/>
+        <path d="M32 8 L34.5 22 L48 16 L38 27 L52 32 L38 37 L48 48 L34.5 42 L32 56 L29.5 42 L16 48 L26 37 L12 32 L26 27 L16 16 L29.5 22 Z"
+              fill="rgba(212,175,87,0.5)"/>
+      </svg>
+    </div>
+    <p class="loading-text">Opening your invitation…</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       OPENING / TAP-TO-BEGIN SCREEN
+  ═══════════════════════════════════════════════════════ -->
+  <div id="opening-screen" role="button" tabindex="0" aria-label="Tap to open your wedding invitation">
+
+    <!-- Top ornamental mandala -->
+    <div class="opening-top-ornament" aria-hidden="true">
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36" cy="36" r="32" stroke="rgba(212,175,87,0.35)" stroke-width="0.75"/>
+        <circle cx="36" cy="36" r="24" stroke="rgba(212,175,87,0.25)" stroke-width="0.75"/>
+        <circle cx="36" cy="36" r="3"  fill="rgba(212,175,87,0.7)"/>
+        <path d="M36 4 L37.5 14 L36 12 L34.5 14 Z"       fill="rgba(212,175,87,0.5)"/>
+        <path d="M36 68 L37.5 58 L36 60 L34.5 58 Z"      fill="rgba(212,175,87,0.5)"/>
+        <path d="M4 36 L14 37.5 L12 36 L14 34.5 Z"       fill="rgba(212,175,87,0.5)"/>
+        <path d="M68 36 L58 37.5 L60 36 L58 34.5 Z"      fill="rgba(212,175,87,0.5)"/>
+        <path d="M10.7 10.7 L18 19 L16.2 17.2 L14.4 19.6 Z" fill="rgba(212,175,87,0.35)"/>
+        <path d="M61.3 61.3 L54 53 L55.8 54.8 L57.6 52.4 Z" fill="rgba(212,175,87,0.35)"/>
+        <path d="M61.3 10.7 L53 18 L54.8 16.2 L52.4 14.4 Z" fill="rgba(212,175,87,0.35)"/>
+        <path d="M10.7 61.3 L19 54 L17.2 55.8 L19.6 57.6 Z" fill="rgba(212,175,87,0.35)"/>
+      </svg>
+    </div>
+
+    <p class="opening-title">Wedding Invitation</p>
+
+    <h1 class="opening-names">
+      <span id="opening-groom-name">Kartikeyan</span>
+      <span class="amp">&amp;</span>
+      <span id="opening-bride-name">Sajni</span>
+    </h1>
+
+    <div class="opening-divider" aria-hidden="true"></div>
+    <p class="opening-tap">Tap to open</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════════════ -->
+  <nav id="site-nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <span class="nav-logo" aria-hidden="true">K &amp; S</span>
+      <button id="nav-menu-btn" class="nav-menu-btn"
+              aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-dropdown">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="nav-dropdown" class="nav-dropdown" role="menu">
+      <a href="#hero"           role="menuitem">Home</a>
+      <a href="#events-section" role="menuitem">Events</a>
+      <a href="#family-section" role="menuitem">Families</a>
+      <a href="#story-section"  role="menuitem">Our Story</a>
+      <a href="#gallery-section"role="menuitem">Gallery</a>
+      <a href="#rsvp-section"   role="menuitem">RSVP</a>
+      <a href="#guestbook-section" role="menuitem">Guestbook</a>
+      <a href="#gift-section"   role="menuitem">Blessings</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════════════════ -->
+  <main id="main-content" aria-label="Wedding invitation">
+
+    <!-- ──────────────────────────────────────────────────────
+         HERO
+    ─────────────────────────────────────────────────────── -->
+    <section id="hero" aria-label="Wedding invitation hero">
+      <!-- Petal particle canvas -->
+      <div id="hero-petals-canvas" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <!-- Top ornament -->
+        <div class="hero-top-ornament" aria-hidden="true">
+          <svg class="svg-ornament" width="48" height="24" viewBox="0 0 120 40" fill="none">
+            <path d="M0 20 Q30 0 60 20 Q90 40 120 20" stroke="rgba(212,175,87,0.6)" stroke-width="1" fill="none"/>
+            <path d="M0 20 Q30 40 60 20 Q90 0 120 20" stroke="rgba(212,175,87,0.3)" stroke-width="0.5" fill="none"/>
+            <circle cx="60" cy="20" r="3" fill="rgba(212,175,87,0.7)"/>
+          </svg>
+        </div>
+
+        <p class="hero-eyebrow">Together with our families</p>
+
+        <h1>
+          <span class="hero-groom-name" id="hero-groom-name">Kartikeyan</span>
+          <span class="hero-amp" aria-label="and">&amp;</span>
+          <span class="hero-bride-name" id="hero-bride-name">Sajni</span>
+        </h1>
+
+        <p class="hero-tagline">invite you to their wedding</p>
+
+        <div class="hero-date-badge" aria-label="Wedding date and time">
+          <span class="date-label">Wedding Ceremony</span>
+          <span class="date-value" id="hero-date-value">Saturday, 14 February 2027</span>
+          <span class="date-label" id="hero-time-value">7:00 PM onwards</span>
+        </div>
+
+        <p class="hero-hashtag" id="hero-hashtag">#KartikeyanWedsSajni</p>
+
+        <div style="margin-top:1.5rem;display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
+          <button id="save-date-btn-hero" class="btn btn-primary btn-sm"
+                  aria-label="Save wedding date to calendar">
+            🗓 Save the Date
+          </button>
+          <a href="#events-section" class="btn btn-outline btn-sm"
+             aria-label="View all wedding events">
+            View Events
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         EVENT SUMMARY CARD
+    ─────────────────────────────────────────────────────── -->
+    <section id="event-summary" aria-label="Wedding ceremony summary">
+      <div class="event-summary-inner">
+        <div class="summary-card reveal">
+          <p class="summary-event-name">Wedding Ceremony</p>
+          <p class="summary-couple-names">Kartikeyan Gupta &amp; Sajni Suvarna</p>
+
+          <div class="summary-meta">
+            <div class="summary-meta-item">
+              <span class="summary-meta-label">Date</span>
+              <span class="summary-meta-value" id="summary-date">14 February 2027</span>
+            </div>
+            <div class="summary-meta-item">
+              <span class="summary-meta-label">Time</span>
+              <span class="summary-meta-value" id="summary-time">7:00 PM onwards</span>
+            </div>
+            <div class="summary-meta-item summary-venue-full">
+              <span class="summary-meta-label">Venue</span>
+              <span class="summary-meta-value" id="summary-venue">[Wedding Hall Name]</span>
+            </div>
+            <div class="summary-meta-item summary-venue-full">
+              <span class="summary-meta-label">Address</span>
+              <span class="summary-meta-value" id="summary-address">[Address — to be confirmed]</span>
+            </div>
+          </div>
+
+          <div class="summary-actions">
+            <a id="summary-maps-btn"
+               href="#"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary btn-sm"
+               aria-label="Get directions on Google Maps">
+              📍 Get Directions
+            </a>
+            <button id="save-date-btn"
+                    class="btn btn-outline btn-sm"
+                    aria-label="Save wedding date to calendar">
+              🗓 Save the Date
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         COUNTDOWN
+    ─────────────────────────────────────────────────────── -->
+    <section id="countdown-section" aria-label="Wedding countdown">
+      <div class="countdown-inner">
+        <p class="countdown-label">Counting down to the big day</p>
+
+        <div id="countdown-grid" class="countdown-grid" aria-live="polite" aria-atomic="true">
+          <div class="countdown-unit">
+            <span class="countdown-number" id="countdown-days"   aria-label="Days">00</span>
+            <span class="countdown-unit-label" aria-hidden="true">Days</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="countdown-hours"  aria-label="Hours">00</span>
+            <span class="countdown-unit-label" aria-hidden="true">Hours</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="countdown-minutes" aria-label="Minutes">00</span>
+            <span class="countdown-unit-label" aria-hidden="true">Minutes</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="countdown-seconds" aria-label="Seconds">00</span>
+            <span class="countdown-unit-label" aria-hidden="true">Seconds</span>
+          </div>
+        </div>
+
+        <p id="countdown-message" class="countdown-message" role="status">
+          The celebration has begun ❤️
+        </p>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         INVITATION MESSAGE
+    ─────────────────────────────────────────────────────── -->
+    <section id="message-section" aria-label="Invitation message">
+      <div class="message-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">A Personal Invitation</p>
+          <div class="ornament-divider" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0 L9 6 L15 6 L10.5 9.5 L12 16 L8 12 L4 16 L5.5 9.5 L1 6 L7 6 Z"/>
+            </svg>
+          </div>
+        </div>
+
+        <blockquote class="message-text reveal reveal-delay-1">
+          With the blessings of our elders and the warmth of family gathered close,
+          we joyfully invite you to celebrate the beginning of a beautiful new chapter —
+          as Kartikeyan and Sajni come together in marriage.
+          <br/><br/>
+          Your presence would mean everything to us.
+        </blockquote>
+
+        <p class="message-sign reveal reveal-delay-2">
+          — The Gupta &amp; Suvarna Families
+        </p>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         WEDDING EVENTS
+    ─────────────────────────────────────────────────────── -->
+    <section id="events-section" aria-labelledby="events-heading">
+      <div class="events-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Join Us For</p>
+          <h2 class="section-title" id="events-heading">The Wedding Celebrations</h2>
+          <div class="ornament-divider" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" color="var(--gold)">
+              <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+            </svg>
+          </div>
+          <p class="section-subtitle">Five celebrations. One beautiful beginning.</p>
+        </div>
+
+        <!-- Events are injected here by app.js -->
+        <div id="events-container" role="list" aria-label="Wedding events"></div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         FAMILIES
+    ─────────────────────────────────────────────────────── -->
+    <section id="family-section" aria-labelledby="family-heading">
+      <div style="max-width:680px;margin:0 auto;padding:4.5rem 1rem;">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">With the Blessings of</p>
+          <h2 class="section-title" id="family-heading">Our Families</h2>
+          <div class="ornament-divider" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" color="var(--gold)">
+              <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+            </svg>
+          </div>
+          <p class="section-subtitle">Two families. One celebration.</p>
+        </div>
+
+        <!-- Family cards injected by app.js -->
+        <div id="family-container" class="family-grid"></div>
+
+        <p class="family-unity-message reveal">
+          "Two families becoming one — this is the heart of every wedding."
+        </p>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         OUR STORY (hidden if config.story is empty)
+    ─────────────────────────────────────────────────────── -->
+    <section id="story-section" class="section-dark" aria-labelledby="story-heading">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow" style="color:var(--gold-pale)">A New Chapter Begins</p>
+          <h2 class="section-title section-title--light" id="story-heading">Their Story</h2>
+          <div class="ornament-divider" style="opacity:.4" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="rgba(212,175,87,0.8)" color="rgba(212,175,87,0.8)">
+              <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="story-inner">
+          <p class="story-text reveal" id="story-text">
+            <!-- Populated by app.js from config.story -->
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         PHOTO GALLERY (hidden if gallery disabled / empty)
+    ─────────────────────────────────────────────────────── -->
+    <section id="gallery-section" aria-labelledby="gallery-heading">
+      <div class="gallery-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Moments Together</p>
+          <h2 class="section-title" id="gallery-heading">Our Gallery</h2>
+          <div class="ornament-divider" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" color="var(--gold)">
+              <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Gallery grid injected by app.js -->
+        <div id="gallery-grid" class="gallery-grid" role="list" aria-label="Wedding photo gallery"></div>
+      </div>
+    </section>
+
+    <!-- Lightbox (gallery) -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="lightbox-close" aria-label="Close photo viewer">✕</button>
+      <button class="lightbox-prev"  aria-label="Previous photo">‹</button>
+      <img id="lightbox-img" src="" alt="" />
+      <button class="lightbox-next"  aria-label="Next photo">›</button>
+    </div>
+
+    <!-- ──────────────────────────────────────────────────────
+         GUEST WELCOME
+    ─────────────────────────────────────────────────────── -->
+    <section id="welcome-section" aria-label="Welcome message">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">To Our Dearest Guests</p>
+        <h2 class="section-title">Your Presence Is Our Greatest Gift</h2>
+        <div class="ornament-divider" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" color="var(--gold)">
+            <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+          </svg>
+        </div>
+      </div>
+      <p class="welcome-text reveal reveal-delay-1">
+        Your love and blessings have shaped who we are.
+        Having you with us as we begin this new journey is a joy beyond words.
+        We look forward to laughing, eating, dancing, and making memories —
+        with you by our side.
+      </p>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         LOGISTICS (dress code, parking, travel, etc.)
+         Hidden automatically if nothing is configured.
+    ─────────────────────────────────────────────────────── -->
+    <section id="logistics-section" aria-labelledby="logistics-heading">
+      <div class="logistics-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Good to Know</p>
+          <h2 class="section-title" id="logistics-heading">Guest Information</h2>
+          <div class="ornament-divider" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" color="var(--gold)">
+              <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Logistics cards injected by app.js -->
+        <div id="logistics-grid" class="logistics-grid"></div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         RSVP
+    ─────────────────────────────────────────────────────── -->
+    <section id="rsvp-section" aria-labelledby="rsvp-heading">
+      <div class="rsvp-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow" style="color:var(--gold-pale)">Kindly Respond</p>
+          <h2 class="section-title section-title--light" id="rsvp-heading">Will you join us?</h2>
+          <div class="ornament-divider" style="opacity:.4" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="rgba(212,175,87,0.8)">
+              <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+            </svg>
+          </div>
+        </div>
+
+        <p class="rsvp-subtitle">
+          Let us know if you'll be joining the celebration.
+        </p>
+
+        <div class="rsvp-buttons" role="group" aria-label="RSVP options">
+          <button id="rsvp-yes" class="btn btn-primary btn-lg" aria-label="Confirm attendance">
+            Yes, I'll be there ❤️
+          </button>
+          <button id="rsvp-no" class="btn btn-outline btn-lg" aria-label="Decline attendance">
+            Sorry, I can't make it
+          </button>
+        </div>
+
+        <p id="rsvp-confirmation" class="rsvp-confirmation" role="status" aria-live="polite"></p>
+
+        <div style="margin-top:2rem;opacity:.7">
+          <p style="font-size:.8rem;color:var(--gold-pale);letter-spacing:.1em;">
+            Questions? Reach out to the family below.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         CONTACT / NEED HELP
+    ─────────────────────────────────────────────────────── -->
+    <section id="contact-section" aria-labelledby="contact-heading">
+      <div class="contact-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">We're Here for You</p>
+          <h2 class="section-title" id="contact-heading">Need Help?</h2>
+          <div class="ornament-divider" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" color="var(--gold)">
+              <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+            </svg>
+          </div>
+          <p class="section-subtitle">Feel free to reach out to the family for directions, timing, or anything at all.</p>
+        </div>
+        <!-- Contact cards injected by app.js -->
+        <div id="contact-cards-container" class="contact-cards"></div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         GUESTBOOK
+    ─────────────────────────────────────────────────────── -->
+    <section id="guestbook-section" aria-labelledby="guestbook-heading">
+      <div class="guestbook-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Your Words Mean the World</p>
+          <h2 class="section-title" id="guestbook-heading">Leave a Message</h2>
+          <div class="ornament-divider" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" color="var(--gold)">
+              <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+            </svg>
+          </div>
+          <p class="section-subtitle">Write a note for Kartikeyan &amp; Sajni. Your message will be treasured.</p>
+        </div>
+
+        <form id="guestbook-form" class="guestbook-form reveal" novalidate
+              aria-label="Leave a congratulations message">
+          <div class="form-field">
+            <label class="form-label" for="guestbook-name">Your Name</label>
+            <input type="text"
+                   id="guestbook-name"
+                   name="name"
+                   class="form-input"
+                   placeholder="Enter your name"
+                   autocomplete="name"
+                   maxlength="60"
+                   required
+                   aria-required="true" />
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="guestbook-message">Your Message</label>
+            <textarea id="guestbook-message"
+                      name="message"
+                      class="form-textarea"
+                      placeholder="Write your congratulations…"
+                      rows="4"
+                      required
+                      aria-required="true"
+                      aria-describedby="guestbook-char-count guestbook-error"></textarea>
+            <p class="form-char-count" id="guestbook-char-count" aria-live="polite">0 / 300</p>
+            <p class="form-error" id="guestbook-error" role="alert" aria-live="assertive"></p>
+          </div>
+
+          <button type="submit" id="guestbook-submit" class="btn btn-maroon" style="width:100%">
+            Send Congratulations ❤️
+          </button>
+        </form>
+
+        <p id="guestbook-empty" class="guestbook-empty" style="display:none">
+          Be the first to leave a message for the couple.
+        </p>
+
+        <div id="guestbook-messages" class="guestbook-messages" aria-label="Guest messages" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         GIFT / BLESSINGS
+    ─────────────────────────────────────────────────────── -->
+    <section id="gift-section" aria-labelledby="gift-heading">
+      <div class="gift-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">From the Heart</p>
+          <h2 class="section-title" id="gift-heading">Your Blessings Are More Than Enough</h2>
+          <div class="ornament-divider" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" color="var(--gold)">
+              <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+            </svg>
+          </div>
+        </div>
+
+        <p class="gift-note reveal" id="gift-note">
+          Your presence and blessings are the greatest gifts we could ask for.
+          If you would still like to bless the couple with a gift, we kindly request
+          that you consider a small monetary blessing rather than a physical gift.
+        </p>
+
+        <div class="reveal reveal-delay-1">
+          <div class="gift-qr-wrapper" style="text-align:center">
+            <img id="gift-qr-img"
+                 src="assets/gift-qr.png"
+                 alt="QR code to send blessings"
+                 width="160"
+                 height="160"
+                 loading="lazy" />
+          </div>
+          <p class="gift-qr-label">Scan to send your blessings</p>
+
+          <p class="gift-upi" id="gift-upi" aria-label="UPI ID"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────────────
+         SHARE INVITATION
+    ─────────────────────────────────────────────────────── -->
+    <section id="share-section" aria-labelledby="share-heading">
+      <div class="share-inner">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Spread the Joy</p>
+          <h2 class="section-title" id="share-heading">Share this Invitation</h2>
+          <div class="ornament-divider" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" color="var(--gold)">
+              <path d="M8 1 C8 1 9.5 5 14 5 C14 5 10 7 12 12 C12 12 9 9.5 8 11 C7 9.5 4 12 4 12 C6 7 2 5 2 5 C6.5 5 8 1 8 1Z"/>
+            </svg>
+          </div>
+          <p class="section-subtitle">Help us reach everyone we love.</p>
+        </div>
+
+        <div class="share-buttons reveal">
+          <button id="share-btn"
+                  class="btn btn-maroon"
+                  aria-label="Share this invitation">
+            🔗 Share Invitation
+          </button>
+          <button id="share-whatsapp-btn"
+                  class="btn btn-ghost"
+                  aria-label="Share on WhatsApp">
+            💬 WhatsApp
+          </button>
+          <button id="share-copy-btn"
+                  class="btn btn-outline-dark"
+                  aria-label="Copy invitation link">
+            📋 Copy Link
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /main-content -->
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer id="site-footer" aria-label="Wedding invitation footer">
+    <div class="footer-inner">
+
+      <!-- Top ornament -->
+      <div style="margin-bottom:1.5rem;opacity:.4" aria-hidden="true">
+        <svg class="svg-ornament" width="60" height="20" viewBox="0 0 120 30" fill="none">
+          <path d="M0 15 Q60 0 120 15" stroke="rgba(212,175,87,0.8)" stroke-width="1" fill="none"/>
+          <circle cx="60" cy="8" r="2.5" fill="rgba(212,175,87,0.8)"/>
+        </svg>
+      </div>
+
+      <p class="footer-couple-names">
+        <span id="footer-groom">Kartikeyan</span>
+        <span class="footer-amp"> &amp; </span>
+        <span id="footer-bride">Sajni</span>
+      </p>
+
+      <p class="footer-date" id="footer-date">Saturday, 14 February 2027</p>
+      <p class="footer-hashtag" id="footer-hashtag">#KartikeyanWedsSajni</p>
+      <p class="footer-note">With love, from our families to yours.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FIXED UI ELEMENTS
+  ═══════════════════════════════════════════════════════ -->
+
+  <!-- Music player -->
+  <div id="music-player" aria-label="Music player">
+    <button id="music-btn"
+            class="music-btn"
+            aria-label="Play wedding music"
+            aria-pressed="false">
+      <span id="music-icon" aria-hidden="true">🎵</span>
+    </button>
+  </div>
+
+  <!-- Back to top -->
+  <button id="back-to-top"
+          aria-label="Scroll back to top"
+          title="Back to top">
+    ↑
+  </button>
+
+  <!-- Toast notification -->
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCRIPTS  (order matters)
+  ═══════════════════════════════════════════════════════ -->
+  <script src="js/config.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/guestbookService.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/sharing.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

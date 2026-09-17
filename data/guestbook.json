@@ -1,0 +1,20 @@
+[
+  {
+    "id": "sample-1",
+    "name": "Priya & Rahul Sharma",
+    "message": "Congratulations Kartikeyan & Sajni! Wishing you both a lifetime of love, laughter, and togetherness. So happy to celebrate this beautiful occasion with your families.",
+    "timestamp": 1739462400000
+  },
+  {
+    "id": "sample-2",
+    "name": "Aunty Meenakshi",
+    "message": "My warmest blessings to you both. May your home always be filled with joy, your hearts with love, and your lives with peace. God bless you, my dears.",
+    "timestamp": 1739548800000
+  },
+  {
+    "id": "sample-3",
+    "name": "The Krishnamurthy Family",
+    "message": "Kartikeyan and Sajni — two wonderful souls beginning a beautiful journey together. We are so honoured to be part of this celebration. Congratulations!",
+    "timestamp": 1739635200000
+  }
+]
