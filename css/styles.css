@@ -1386,9 +1386,16 @@ ul { list-style: none; }
 .rsvp-buttons {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: var(--space-sm);
-  max-width: 320px;
+  width: 100%;
+  max-width: 340px;
   margin: 0 auto var(--space-xl);
+}
+
+.rsvp-buttons .btn {
+  width: 100%;
+  justify-content: center;
 }
 
 .rsvp-confirmation {
@@ -1401,6 +1408,30 @@ ul { list-style: none; }
 
 .rsvp-confirmation.visible {
   display: block;
+  margin-top: var(--space-md);
+  line-height: 1.7;
+}
+
+/* "Sorry" button — needs visibility on dark maroon background */
+#rsvp-no {
+  background: transparent;
+  color: var(--gold-pale);
+  border: 1.5px solid rgba(212, 175, 87, 0.5);
+}
+
+#rsvp-no:hover:not(:disabled),
+#rsvp-no:focus-visible:not(:disabled) {
+  background: rgba(212, 175, 87, 0.12);
+  border-color: var(--gold-light);
+  color: var(--white);
+}
+
+#rsvp-yes:disabled,
+#rsvp-no:disabled {
+  opacity: 0.45;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
 }
 
 /* ── 20. Contact Section ───────────────────────────────────── */
@@ -1881,7 +1912,14 @@ ul { list-style: none; }
 @media (min-width: 480px) {
   .rsvp-buttons {
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
+  }
+
+  .rsvp-buttons .btn {
+    width: auto;
+    flex: 1;
+  }
+}
   }
 }
 

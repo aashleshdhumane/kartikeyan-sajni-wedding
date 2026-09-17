@@ -594,42 +594,58 @@
     // ── 14. RSVP ──────────────────────────────────────────────
 
     function initRSVP() {
-        const yesBtn     = document.getElementById("rsvp-yes");
-        const noBtn      = document.getElementById("rsvp-no");
-        const confirm    = document.getElementById("rsvp-confirmation");
+        const yesBtn  = document.getElementById("rsvp-yes");
+        const noBtn   = document.getElementById("rsvp-no");
+        const confirm = document.getElementById("rsvp-confirmation");
 
         if (!yesBtn || !noBtn || !confirm) return;
 
-        function handleRsvp(attending) {
+        // Make sure confirmation is hidden on load regardless of CSS
+        confirm.style.display = "none";
+        confirm.classList.remove("visible");
+
+        function handleRsvp(attending, showMessage) {
             const message = attending
                 ? "We are so delighted to have you with us! We look forward to celebrating together. ❤️"
                 : "We understand, and we will miss you dearly. Thank you for letting us know.";
 
-            confirm.textContent = message;
-            confirm.classList.add("visible");
             yesBtn.disabled = true;
             noBtn.disabled  = true;
-            confirm.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
-            // Store locally
-            try {
-                localStorage.setItem("rsvp_response", JSON.stringify({
-                    attending,
-                    timestamp: Date.now()
-                }));
-            } catch (e) { /* silent */ }
+            // Only animate the message if triggered by an actual button tap
+            if (showMessage) {
+                confirm.textContent  = message;
+                confirm.style.display = "block";
+                confirm.classList.add("visible");
+                setTimeout(() => {
+                    confirm.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                }, 100);
+
+                // Persist choice
+                try {
+                    localStorage.setItem("rsvp_response", JSON.stringify({
+                        attending,
+                        timestamp: Date.now()
+                    }));
+                } catch (e) { /* silent */ }
+            }
         }
 
-        // Restore previous response
+        // Restore previous state: just lock buttons, don't show message on reload
         try {
             const saved = JSON.parse(localStorage.getItem("rsvp_response") || "null");
             if (saved) {
-                handleRsvp(saved.attending);
+                handleRsvp(saved.attending, false);
+
+                // Show which button was chosen subtly
+                const chosenBtn = saved.attending ? yesBtn : noBtn;
+                chosenBtn.style.opacity = "0.6";
+                chosenBtn.style.cursor  = "default";
             }
         } catch (e) { /* silent */ }
 
-        yesBtn.addEventListener("click", () => handleRsvp(true));
-        noBtn.addEventListener("click",  () => handleRsvp(false));
+        yesBtn.addEventListener("click", () => handleRsvp(true,  true));
+        noBtn.addEventListener("click",  () => handleRsvp(false, true));
     }
 
     // ── 15. Contacts ──────────────────────────────────────────
