@@ -211,7 +211,7 @@ const weddingConfig = {
     sharing: {
         // The URL where this invitation will be hosted
         // Leave empty to use window.location.href
-        invitationUrl: "",
+        invitationUrl: "https://aashleshdhumane.github.io/kartikeyan-sajni-wedding/",
         message:       "With love and happiness, we invite you to celebrate the wedding of Kartikeyan & Sajni ❤️\n\nWe would be delighted to have you with us.\n\n"
     },
 
